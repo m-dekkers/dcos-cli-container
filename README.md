@@ -1,9 +1,17 @@
 # dcos-cli-container
-i386 container with the dcos cli tool, because Catalina broke MKE CLI
+Linux (debian) container with the dcos cli tool, because OSX Catalina broke the MKE CLI.
 
 Set up an alias of some sort:
 
-```alias mydcos='docker container run -it --rm -v ~/.dcos:/root/.dcos --workdir /root d2iqmdekkers/dcos-cli-container:386-1.0'```
+```alias mydcos='docker run -it --rm -e HOME=${HOME} -v ~/.dcos:${HOME}/.dcos --workdir ${HOME} d2iqmdekkers/dcos-cli-container:1.2'```
 
-If required, replace mydcos with whatever you like. When used as above, this will use your existing .dcos config (already installed plugines, clusters etc)
+You can replace mydcos with whatever you like, for example ```dcos``` if you are brave.
+
+## Issues:
+- You will have to remove and reinstall / setup existing clusters.
+- The progress bars don't show, and when setting up a cluster or installing a package it appears that the command hangs. use ```-v``` or ```-vv``` for output. 
+
+I hope we have an updated set of tools for OSX Catalina soon. In the meantime, this should work. 
+
+Any issues or bugs, please mail or slack me. 
 

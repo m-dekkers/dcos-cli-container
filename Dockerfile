@@ -12,15 +12,11 @@ LABEL version=${IMGVERSION}
 LABEL site="https://www.d2iq.com"
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -qq update \
-		&& apt-get -qqy upgrade
 COPY dcos_1.13_lnx /usr/local/bin/dcos
-RUN chmod +x /usr/local/bin/dcos
-
-VOLUME /root/.dcos
+RUN apt-get -qq update \
+		&& apt-get -qqy upgrade \
+		&& chmod +x /usr/local/bin/dcos
 
 RUN echo ${DOCKERTAG} > /dockertag
-
-WORKDIR /root/.dcos
 
 ENTRYPOINT ["dcos"]
