@@ -3,7 +3,7 @@ Linux (debian) container with the dcos cli tool, because OSX Catalina broke the 
 
 Set up an alias of some sort:
 
-```alias='docker run -it --rm -e HOME=${HOME} -v ~/.dcos:${HOME}/.dcos -v $PWD:/dcos --workdir /dcos d2iqmdekkers/dcos-cli-container:1.2'```
+```alias mydcos='docker run -it --rm -e HOME=${HOME} -v ~/.dcos:${HOME}/.dcos -v $PWD:/dcos --workdir /dcos d2iqmdekkers/dcos-cli-container:1.2'```
 
 You can replace `alias=mydcos [...]` with whatever you like, for example `alias=dcos [...]` if you are brave.
 
