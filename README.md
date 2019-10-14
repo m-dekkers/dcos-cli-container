@@ -3,9 +3,9 @@ Linux (debian) container with the dcos cli tool, because OSX Catalina broke the 
 
 Set up an alias of some sort:
 
-```alias mydcos='docker run -it --rm -e HOME=${HOME} -v ~/.dcos:${HOME}/.dcos -v $PWD:/dcos --workdir /dcos d2iqmdekkers/dcos-cli-container:1.2'```
+```alias tmpdcos='docker run -it --rm -e HOME=${HOME} -v ~/.tmpdcos:${HOME}/.dcos -v $PWD:/dcos --workdir /dcos d2iqmdekkers/dcos-cli-container:1.2'```
 
-You can replace `alias mydcos=[...]` with whatever you like, for example `alias dcos=[...]` but I'd advise you keep using the regular `dcos` command, and only use this workaround when you encounter a subcommand that doesn't work. 
+You can replace `alias tmpdcos=[...]` with whatever you like, for example `alias dcos=[...]` but I'd advise you keep using the regular `dcos` command, and only use this workaround when you encounter a subcommand that doesn't work. 
 
 If you find another subcommand that doesn't work, please reach out to #dcos-cluster-ops if you are @D2iQ or open a support ticket. 
 
